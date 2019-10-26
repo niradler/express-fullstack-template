@@ -22,7 +22,7 @@ module.exports = app => {
   app.use(express.static("./static"));
   app.use(
     session({
-      secret: "fd3ca0730bf8103280e83bb33b7219ee",
+      secret: process.env.SECRET || "fd3ca0730bf8103280e83bb33b7219ee",
       cookie: { maxAge: 60000 },
       resave: false,
       saveUninitialized: false
